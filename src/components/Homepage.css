@@ -1,0 +1,22 @@
+.containerhome{
+    margin: auto;
+    width: 100%;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   justify-content: space-around;
+   border-bottom: 1px solid grey;
+   height: 100px;
+   cursor: pointer;
+}
+.homeshow{
+        margin: auto;
+}
+
+@media only screen and (max-width: 500px){
+    .containerhome{
+        display: grid;
+        background-color: lightgray;
+        color: blue;
+        grid-template-columns: repeat(1,1fr);
+    }
+    }

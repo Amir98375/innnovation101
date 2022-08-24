@@ -1,0 +1,11 @@
+.containerDetails{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border: 1px solid grey;
+    justify-content: space-around;
+    margin: auto;
+}
+.detailshow{
+    margin: auto;
+}
