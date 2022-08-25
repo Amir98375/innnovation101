@@ -11,6 +11,16 @@
 .homeshow{
         margin: auto;
 }
+.buttondiv{
+   
+  margin: auto;
+ justify-items: center;
+}
+
+.button{
+    justify-items: center;
+    margin: auto;
+  }
 
 @media only screen and (max-width: 500px){
     .containerhome{

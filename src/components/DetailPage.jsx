@@ -5,28 +5,66 @@ import { useState } from 'react'
 import { useParams } from 'react-router'
 import './Detaillpage.css'
 export const DetailPage = () => {
-    
-    const {id}=useParams()
+    const [arrlength,setarrlength]=useState(0)
+    // const {el}=useParams()
     const [single,setsingle]=useState([])
    
-    const getData=(id)=>{
-        axios.get(`https://run.mocky.io/v3/5ff1e1a8-b652-40c4-8c1f-5fb701ece088/${id}`,{
-            params:{
-                _limit:10
-            }
+      const getData=()=>{
+        axios.get(`https://apnastore123.herokuapp.com/add`)
+        .then((res)=>{setsingle(res.data)
+          setarrlength(res.data.length)
         })
-        .then((res)=>setsingle(res.data))
-    }
-    useEffect(()=>{
-       getData(id)
-    },[id])
-
-    console.log(single,"data")
+        .catch((err)=>console.log(err))
+      }
+      useEffect(()=>{
+        getData()
+        // if(single){
+        //   // setarrlength(single.length)
+        // }
+        
+        //   console.log(single,"use")
+      },[])
+      
+     
+    console.log(single)
+    console.log(arrlength)
+    
   return (
     <div className='containerDetails'>
-        <div className='detailshow'>{single.Id}</div>
-        <div className='detailshow'>2</div>
-        <div className='detailshow'>3</div>
+        <div className='detailshowno'>
+          <img className='imageshow' src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="" />
+        </div>
+        <div className='detailshow'>
+         <div className='datashow'>
+           <div>{single[arrlength-1]?.Menu_Category}</div>
+          <div>{single[arrlength-1]?.Menu_Items}</div>
+          </div>
+          {/* style={{display:"flex" , flexWrap:"wrap",width:"80%",border:"1px solid black",margin:"auto"}} */}
+         <div className='datashow'>
+         <div>Sugar:{single[arrlength-1]?.Added_Sugars_g}</div>
+          <div>Cholestrole:{single[arrlength-1]?.Cholesterols_mg}</div>
+          <div>Energy:{single[arrlength-1]?.Energy_kCal}</div>
+         </div>
+         <div className='datashow'>
+         <div>Sodium:{single[arrlength-1]?.Sodium_mg}</div>
+          <div>TSugar{single[arrlength-1]?.Total_Sugars_g}</div>
+          <div>Tcarb{single[arrlength-1]?.Total_carbohydrate_g}</div>
+         </div>
+         <div className='datashow'>
+         <div>Serve:{single[arrlength-1]?.Per_Serve_Size}</div>
+          <div>Protien:{single[arrlength-1]?.Protein_g}</div>
+          <div>Sat:{single[arrlength-1]?.Sat_Fat_g}</div>
+         </div>
+         
+         <div className='datashow'>
+         <div>Id:{single[arrlength-1]?.Id}</div>
+         <div>TFat{single[arrlength-1]?.Total_fat_g}</div>
+          <div>transFat{single[arrlength-1]?.Trans_fat_g}</div>
+       
+         </div>
+        </div>
+       
+        
     </div>
   )
 }
