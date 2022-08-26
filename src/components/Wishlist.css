@@ -1,0 +1,58 @@
+.favContainer{
+    margin: auto;
+    width: 100%;
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   justify-content: space-around;
+  
+   
+   cursor: pointer;
+ 
+   gap: 10px;
+}
+.favshow{
+    margin: auto;
+    justify-content: center;
+    justify-items: auto;
+    margin-left: 10%;
+    
+}
+.favshowcon{
+    border: 1px solid grey;
+}
+
+    @media only screen and (max-width: 1200px){
+        .favContainer{
+            display: grid;
+            background-color: white;
+            color: saddlebrown;
+            grid-template-columns: repeat(3,1fr);
+        }
+        }
+        @media only screen and (max-width: 1000px){
+            .favContainer{
+                display: grid;
+                background-color: yellowgreen;
+                color:blue;
+                font-size: larger;
+                grid-template-columns: repeat(3,1fr);
+            }
+            }
+    @media only screen and (max-width: 700px){
+        .favContainer{
+            display: grid;
+            background-color: lightgray;
+            color: blue;
+            grid-template-columns: repeat(2,1fr);
+        }
+        }
+
+@media only screen and (max-width: 500px){
+    .favContainer{
+        display: grid;
+        background-color:black;
+        color:white;
+        font-size: larger;
+        grid-template-columns: repeat(1,1fr);
+    }
+    }

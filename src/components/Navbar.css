@@ -4,10 +4,20 @@
     display: flex;
     justify-content: space-around;
     justify-items: center;
-    background-color: brown;
+    background-color: grey;
     padding-top: 30px;
+    cursor: pointer;
 }
 .main{
+  color: white;
+  font-size: xx-large;
+}
+.spanclass{
     color: white;
+ margin-bottom: 20px;
+}
+.mainfav{
+    color: maroon;
     font-size: xx-large;
+    justify-items: center;
 }

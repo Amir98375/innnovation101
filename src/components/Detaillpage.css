@@ -8,6 +8,18 @@
     gap: 20px;
  
 }
+.buttonclass{
+    margin-left: 40%;
+    margin-top: 10px;
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+    background-color: teal;
+    color: white;
+    font-size: x-large;
+    font-style: italic;
+    cursor: pointer;
+}
 .detailshow{
     height: 200px;
     border: 1px solid blue;

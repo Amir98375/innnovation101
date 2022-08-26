@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { useParams } from 'react-router'
+
 import './Detaillpage.css'
 export const DetailPage = () => {
     const [arrlength,setarrlength]=useState(0)
@@ -12,7 +12,7 @@ export const DetailPage = () => {
       const getData=()=>{
         axios.get(`https://apnastore123.herokuapp.com/add`)
         .then((res)=>{setsingle(res.data)
-          setarrlength(res.data.length)
+          setarrlength(res.data.length-1)
         })
         .catch((err)=>console.log(err))
       }
@@ -24,10 +24,23 @@ export const DetailPage = () => {
         
         //   console.log(single,"use")
       },[])
-      
+
+      const AddToFav=(item)=>{
+      // console.log(item,"itme")
+        const fav=JSON.parse(localStorage.getItem('fav'))||[]
+        localStorage.setItem("fav",JSON.stringify(fav) )
+        const dupliactes=fav.filter((cartItem)=>cartItem.Id===item.Id)
+        if(dupliactes.length===0){
+          fav.push(item);
+          localStorage.setItem("fav",JSON.stringify(fav) )
+          alert("added succefully")
+         
+      }
      
-    console.log(single)
-    console.log(arrlength)
+    }
+      // axios.post(`https://apnastore123.herokuapp.com/fav`,single[arrlength-1]) 
+     
+ 
     
   return (
     <div className='containerDetails'>
@@ -35,6 +48,7 @@ export const DetailPage = () => {
           <img className='imageshow' src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="" />
         </div>
         <div className='detailshow'>
+       
          <div className='datashow'>
            <div>{single[arrlength-1]?.Menu_Category}</div>
           <div>{single[arrlength-1]?.Menu_Items}</div>
@@ -62,9 +76,10 @@ export const DetailPage = () => {
           <div>transFat{single[arrlength-1]?.Trans_fat_g}</div>
        
          </div>
+         <button className='buttonclass' onClick={()=>AddToFav(single[arrlength])}>addtofav</button>
         </div>
        
-        
+      
     </div>
   )
 }

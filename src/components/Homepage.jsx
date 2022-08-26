@@ -99,12 +99,12 @@ b.Total_Sodium_mg-a.Total_Sodium_mg)
             <div className='containerhome' onClick={()=>handleclick(el)}>
             <div className='homeshow' >{el.Energy_kCal}</div>
             <div className='homeshow'>{el.Menu_Items}</div>
-           
+              
            </div>
             
        )
        })}
-        
+       
     </div>
   )
 }
