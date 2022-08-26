@@ -18,13 +18,9 @@ export const DetailPage = () => {
       }
       useEffect(()=>{
         getData()
-        // if(single){
-        //   // setarrlength(single.length)
-        // }
-        
-        //   console.log(single,"use")
+     
       },[])
-
+// to fav add in localstorage
       const AddToFav=(item)=>{
       // console.log(item,"itme")
         const fav=JSON.parse(localStorage.getItem('fav'))||[]
