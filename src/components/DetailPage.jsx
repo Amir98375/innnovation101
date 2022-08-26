@@ -12,7 +12,7 @@ export const DetailPage = () => {
       const getData=()=>{
         axios.get(`https://apnastore123.herokuapp.com/add`)
         .then((res)=>{setsingle(res.data)
-          setarrlength(res.data.length-1)
+          setarrlength(res.data.length)
         })
         .catch((err)=>console.log(err))
       }

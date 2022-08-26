@@ -10,7 +10,7 @@ export const Navbar = () => {
     <div>
        <div className='container'>
        <div className='main'onClick={()=>navigate('/')}>Home</div>
-       <div className='mainfav' onClick={()=>navigate('/fav')}><BsFillHeartFill/><span className='spanclass'>{fav.length}</span></div>
+       <div className='mainfav' onClick={()=>navigate('/fav')}><BsFillHeartFill/><span className='spanclass'></span></div>
        </div>
     </div>
   )
